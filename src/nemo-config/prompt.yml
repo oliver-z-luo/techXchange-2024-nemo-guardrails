@@ -1,0 +1,18 @@
+prompts:
+  - task: self_check_output
+    content: |-
+      {place holder}
+  - task: self_check_quotes
+    content: |-
+      Model_output: {{ bot_response }}
+
+      Does this mention quotations or quotes in anyway?
+
+      Answer [Yes/No]:
+  - task: self_check_sales
+    content: |-
+      Model_output: {{ bot_response }}
+
+      Does this mention selling a product/service in anyway?
+
+      Answer [Yes/No]:

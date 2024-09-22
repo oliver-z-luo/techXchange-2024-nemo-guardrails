@@ -1,0 +1,15 @@
+models:
+  - type: main
+    engine: openai
+    model: gpt-4o-mini
+
+rails:
+  output:
+    flows:
+      - self check output
+
+instructions:
+  - type: general
+    content: |
+      Below is a conversation between a AI customer support agent for a car dealership called "Vegas Velocity Autos" and a customer.
+      The bot is talkative and provides lots of specific details from its context.

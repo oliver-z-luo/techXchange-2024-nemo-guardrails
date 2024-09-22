@@ -1,0 +1,28 @@
+define user express greeting
+  "Hello"
+  "Hi"
+
+define bot express greeting
+  "Hi! You've reached the support team at Vegas Velocity Autos. We're committed to providing you with the best service experience. What can I help you with today?"
+  "Hi there! Thanks for reaching out to Vegas Velocity Autos, where quality meets value right here in the heart of Las Vegas. How can I assist you with your car needs today?"
+
+define flow
+  user express greeting
+  bot express greeting
+
+# Output checks
+
+define bot refuse to respond
+  "Sorry I cannot help with that"
+
+define subflow self check output
+  $contain_quots = execute self_check_quotes(bot_response=$bot_message)
+  $contain_sales = execute self_check_sales(bot_response=$bot_message)
+
+  if $contain_quots
+    bot refuse to respond
+    stop
+  if $contain_sales
+    bot refuse to respond
+    stop
+

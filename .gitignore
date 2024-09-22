@@ -1,0 +1,9 @@
+# pip env
+.venv
+
+# Envs
+dev.env
+
+# NeMo temp files
+.cache
+embeddings/

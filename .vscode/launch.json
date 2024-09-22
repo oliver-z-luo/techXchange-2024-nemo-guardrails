@@ -1,0 +1,37 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Run main.py",
+      "type": "python",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "program": "${workspaceFolder}/src/main.py",
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/dev.env",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true
+    },
+    {
+      "name": "Attach to main.py",
+      "type": "python",
+      "request": "attach",
+      "connect": {
+        "host": "localhost",
+        "port": 5678
+      },
+      "pathMappings": [
+        {
+          "localRoot": "${workspaceFolder}",
+          "remoteRoot": "${workspaceFolder}"
+        }
+      ],
+      "justMyCode": true
+    },
+    {
+      "name": "Debug main.py",
+      "type": "compound",
+      "configurations": ["Python: Run main.py", "Attach to main.py"]
+    }
+  ]
+}
