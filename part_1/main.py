@@ -22,7 +22,7 @@ current_directory = os.getcwd()
 print(f"Current working directory: {current_directory}")
 
 # Load GR configuration and initialize LLMRails with OpenAI
-config = RailsConfig.from_path("./src/nemo-config")
+config = RailsConfig.from_path("./part_1/nemo-config")
 rails = LLMRails(config)
 
 def get_openai_completion(prompt: str):

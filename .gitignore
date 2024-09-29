@@ -7,3 +7,7 @@ dev.env
 # NeMo temp files
 .cache
 embeddings/
+
+# python cache
+part_1/__pycache__/
+part_1/nemo-config/__pycache__/
