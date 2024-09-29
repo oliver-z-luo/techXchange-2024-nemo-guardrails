@@ -16,13 +16,10 @@ define bot refuse to respond
   "Sorry I cannot help with that"
 
 define subflow self check output
-  $contain_quots = execute self_check_quotes(bot_response=$bot_message)
+  $contain_quotes = execute self_check_quotes(bot_response=$bot_message)
   $contain_sales = execute self_check_sales(bot_response=$bot_message)
 
-  if $contain_quots
-    bot refuse to respond
-    stop
-  if $contain_sales
+  if $contain_quotes or $contain_sales
     bot refuse to respond
     stop
 

@@ -53,7 +53,11 @@ def get_openai_completion(prompt: str):
         return f"An error occurred: {str(e)}"
 
 # Start a continuous chat loop
-print("You can start chatting with the AI agent. Type 'exit' to end the chat.")
+print("===========================================")
+print(" Welcome to the CLI Chat Application!")
+print("===========================================\n")
+print("### You can start chatting with the AI agent directly in this terminal. ###")
+print("### Type 'exit' at any time to end the session. ###")
 conversation_history = []  # Initialize the conversation history list
 
 while True:
