@@ -9,10 +9,11 @@ async def self_check_quotes(bot_response: str):
     Returns True if it contains, False otherwise.
     """
     # OpenAI API call to check for quotes or quotations in the bot response
+    print(f"Bot Response: {bot_response}")
     prompt = f"""
     Model_output: {bot_response}
 
-    Does this mention quotations or quotes in any way?
+    Does this directly mention quotations or quotes?
 
     Answer [Yes/No]:
     """
@@ -40,7 +41,7 @@ async def self_check_sales(bot_response: str):
     prompt = f"""
     Model_output: {bot_response}
 
-    Does this mention selling a product/service in any way?
+    Does this directly mention selling a product/service?
 
     Answer [Yes/No]:
     """
@@ -48,7 +49,7 @@ async def self_check_sales(bot_response: str):
     response = client.chat.completions.create(
         model="gpt-4o-mini",  # Replace with the correct model if necessary
         messages=[{"role": "system", "content": prompt}],
-        max_tokens=10
+        max_tokens=90
     )
     
     # Extract the answer from the API response and check if it contains "Yes" or "No"
