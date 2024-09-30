@@ -67,8 +67,6 @@ while True:
     response = rails.generate(messages=conversation_history[-10:])
     conversation_history.append({"role": "assistant", "content": response['content']})
 
-    print(f"Agent: {response['content']}")
-
     if get_verbosity():
       print("--- LLM Call Summary ---")
       info = rails.explain()
@@ -76,5 +74,7 @@ while True:
       # Optionally print the conversation logic history if needed
       # print("--- Colang History ---")
       # print(info.colang_history)
+    
+    print(f"Agent: {response['content']}")
 
 print("Chat ended.")
