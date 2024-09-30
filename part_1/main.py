@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 import openai
 from nemoguardrails import RailsConfig, LLMRails
-from config import get_openai_api_key
+from config import get_verbosity
 
 # Load environment variables from dev.env
 load_dotenv(dotenv_path="./dev.env")
@@ -56,31 +56,25 @@ print(" Welcome to the CLI Chat Application!")
 print("===========================================\n")
 print("### You can start chatting with the AI agent directly in this terminal. ###")
 print("### Type 'exit' at any time to end the session. ###")
-conversation_history = []  # Initialize the conversation history list
+conversation_history = []
 
 while True:
     user_input = input("You: ")
     if user_input.lower() == 'exit':
         break
 
-    # Append the user's message to the conversation history
     conversation_history.append({"role": "user", "content": user_input})
-
-    # Generate the response using the updated conversation history
     response = rails.generate(messages=conversation_history[-10:])
-
-    # Append the bot's response to the conversation history
     conversation_history.append({"role": "assistant", "content": response['content']})
 
-    # Print the response
     print(f"Agent: {response['content']}")
 
-    info = rails.explain()
-    print("--- LLM Call Summary ---")
-    info.print_llm_calls_summary()
-    # Optionally print the conversation logic history if needed
-    # print("--- Colang History ---")
-    # print(info.colang_history)
-
+    if get_verbosity():
+      print("--- LLM Call Summary ---")
+      info = rails.explain()
+      info.print_llm_calls_summary()
+      # Optionally print the conversation logic history if needed
+      # print("--- Colang History ---")
+      # print(info.colang_history)
 
 print("Chat ended.")
