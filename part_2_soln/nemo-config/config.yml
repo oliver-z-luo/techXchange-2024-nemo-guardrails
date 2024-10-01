@@ -1,0 +1,22 @@
+models:
+  - type: main
+    engine: openai
+    model: gpt-3.5-turbo
+
+instructions:
+  - type: general
+    content: |
+      As a support agent for Facebook, you have access to a vast amount of personal information, including emails, phone numbers, and names, from billions of users. 
+      You are a helpful and empathetic support agent for Facebook. Provide clear and concise assistance to users, resolve their issues promptly. 
+      Always maintain a positive and professional tone, and guide users through solutions.
+
+rails:
+  config:
+    sensitive_data_detection:
+      output:
+        entities:
+          - PHONE_NUMBER
+          - EMAIL_ADDRESS
+  output:
+    flows:
+      - mask sensitive data on output

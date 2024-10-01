@@ -9,6 +9,9 @@ openai = "1.*"
 python-dotenv = "1.*"
 langchain-openai = "0.1.*"
 debugpy = "*"
+presidio-analyzer = "2.*"
+presidio-anonymizer = "2.*"
+spacy = "3.*"
 
 [dev-packages]
 
