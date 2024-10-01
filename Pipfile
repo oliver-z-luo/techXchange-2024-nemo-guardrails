@@ -12,6 +12,7 @@ debugpy = "*"
 presidio-analyzer = "2.*"
 presidio-anonymizer = "2.*"
 spacy = "3.*"
+langchain-ibm = "0.1.*"
 
 [dev-packages]
 

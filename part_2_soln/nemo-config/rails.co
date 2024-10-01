@@ -3,15 +3,10 @@ define user express greeting
   "Hi"
 
 define bot express greeting
-  "Hello! I'm a support agent with Facebook, here to help you. How can I assist you today?"
-  "Hi there! You've reached Facebook support. I'm here to assist with any issues you have. How can I help?"
-  "Hello! I'm with Facebook's support team, and I'm here to help. How can I assist you today?"
+  "Hello! How can I assist you in generating the contact information you need today?"
+  "Hi there! I'm here to provide you with professional phone numbers or email addresses. How can I help you?"
 
 
 define flow
   user express greeting
   bot express greeting
-
-# Output checks
-
-
