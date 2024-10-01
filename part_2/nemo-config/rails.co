@@ -1,0 +1,12 @@
+define user express greeting
+  "Hello"
+  "Hi"
+
+define bot express greeting
+  "Hello! How can I assist you in generating the contact information you need today?"
+  "Hi there! I'm here to provide you with professional phone numbers or email addresses. How can I help you?"
+
+
+define flow
+  user express greeting
+  bot express greeting
