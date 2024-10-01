@@ -1,9 +1,10 @@
 from nemoguardrails import RailsConfig, LLMRails
 from config import get_verbosity
 
-config = RailsConfig.from_path("./part_1/nemo-config")
+config = RailsConfig.from_path("./part_1_soln/nemo-config")
 rails = LLMRails(config)
 
+# Start a continuous chat loop
 print("===========================================")
 print(" Welcome to the CLI Chat Application!")
 print("===========================================\n")
@@ -24,6 +25,7 @@ while True:
       print("--- LLM Call Summary ---")
       info = rails.explain()
       info.print_llm_calls_summary()
+      # Optionally print the conversation logic history if needed
       # print("--- Colang History ---")
       # print(info.colang_history)
     

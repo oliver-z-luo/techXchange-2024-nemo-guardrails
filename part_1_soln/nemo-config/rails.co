@@ -12,3 +12,14 @@ define flow
 
 # Output checks
 
+define bot refuse to respond
+  "Sorry I cannot help with that"
+
+define subflow self check output
+  $contain_quotes = execute self_check_quotes(bot_response=$bot_message)
+  $contain_deals = execute self_check_deals(bot_response=$bot_message)
+
+  if $contain_quotes or $contain_deals
+    bot refuse to respond
+    stop
+

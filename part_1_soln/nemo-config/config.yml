@@ -3,6 +3,11 @@ models:
     engine: openai
     model: gpt-4o-mini
 
+rails:
+  output:
+    flows:
+      - self check output
+
 instructions:
   - type: general
     content: |

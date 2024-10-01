@@ -46,8 +46,19 @@ async def self_check_quotes(bot_response: str):
   Returns True if it contains, False otherwise.
   """
 
-  # prompt instruction here
+  prompt_quote = f"""
+  Does the following text explicitly mention quotations or quotes?
+  
+  ## Start of Text ##
+  {bot_response}
+  ## End of Text ##
 
+  Respond only in valid JSON format (no markdown):
+  {{
+    "answer": "yes" | "no",
+    "rationale": "string" # short explanation of answer
+  }}
+  """
   return await call_openai_api(prompt_quote, bot_response)
 
 @action(name="self_check_deals")
@@ -57,6 +68,17 @@ async def self_check_deals(bot_response: str):
   Returns True if it contains, False otherwise.
   """
 
-  # prompt instruction here
+  prompt_sales = f"""
+  Does the following text explicitly mention making or closing deals?
   
+  ## Start of Text ##
+  {bot_response}
+  ## End of Segment ##
+
+  Respond in JSON format:
+  {{
+    "answer": "yes" | "no",
+    "rationale": "string" # short explanation of answer
+  }}
+  """
   return await call_openai_api(prompt_sales, bot_response)
