@@ -1,10 +1,10 @@
 models:
   - type: main
     engine: watsonxllm
-    model: meta-llama/llama-3-70b-instruct
+    model: "meta-llama/llama-3-70b-instruct"
     parameters:
-      model_id: meta-llama/llama-3-70b-instruct
-      project_id: 6217adff-b167-4467-9298-50d6b0220292
+      model_id: "meta-llama/llama-3-70b-instruct"
+      project_id: "6217adff-b167-4467-9298-50d6b0220292" ## TODO Update
       params:
         temperature: 0.2
         MAX_NEW_TOKENS: 200
@@ -22,8 +22,8 @@ rails:
     sensitive_data_detection:
       output:
         entities:
-          - PHONE_NUMBER
-          - EMAIL_ADDRESS
+          - "PHONE_NUMBER"
+          - "EMAIL_ADDRESS"
   output:
     flows:
       - mask sensitive data on output

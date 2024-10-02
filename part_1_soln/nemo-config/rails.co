@@ -3,12 +3,22 @@ define user express greeting
   "Hi"
 
 define bot express greeting
-  "Hi! You've reached the support team at Vegas Velocity Autos. We're committed to providing you with the best service experience. What can I help you with today?"
-  "Hi there! Thanks for reaching out to Vegas Velocity Autos, where quality meets value right here in the heart of Las Vegas. How can I assist you with your car needs today?"
+  "Hi! You've reached the support team at Vegas Velocity Autos. We're committed to providing you with the best service experience."
+  "Hi there! Thanks for reaching out to Vegas Velocity Autos, where quality meets value right here in the heart of Las Vegas."
+  "Welcome to Vegas Velocity Autos! We're proud to offer the best deals and service in Las Vegas."
+  "Hi! You've reached Vegas Velocity Autos, where we combine quality with value here in Las Vegas."
+  "Hello! Welcome to Vegas Velocity Autos, your trusted car dealership in the heart of Las Vegas."
+
+define bot express offer help
+  "What can I help you with today?"
+  "How can I assist you with your car needs today?"
+  "How can I assist you with finding your perfect vehicle today?"
+  "How can I assist you with your vehicle inquiries today?"
 
 define flow
   user express greeting
   bot express greeting
+  bot express offer help
 
 # Output checks
 
