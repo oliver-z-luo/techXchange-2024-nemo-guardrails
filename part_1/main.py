@@ -24,8 +24,14 @@ while True:
       print("--- LLM Call Summary ---")
       info = rails.explain()
       info.print_llm_calls_summary()
-      # print("--- Colang History ---")
-      # print(info.colang_history)
+      print("--- Colang History ---")
+      print(info.colang_history)
+      if len(info.llm_calls) > 2:
+        print("--- Prompt ---")
+        print(info.llm_calls[2].prompt)
+        print("--- Completion ---")
+        print(info.llm_calls[2].completion)
+        print("--- Agent Output ---")
     
     print(f"Agent: {response['content']}")
 
