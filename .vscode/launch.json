@@ -6,7 +6,7 @@
       "type": "python",
       "request": "launch",
       "python": "${workspaceFolder}/.venv/bin/python",
-      "program": "${workspaceFolder}/part_2_soln/main.py",
+      "program": "${workspaceFolder}/part_1_soln/main.py",
       "console": "integratedTerminal",
       "envFile": "${workspaceFolder}/dev.env",
       "cwd": "${workspaceFolder}",
