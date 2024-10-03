@@ -47,7 +47,7 @@ async def self_check_quotes(bot_response: str):
   """
 
   prompt_quote = f"""
-  Does the following text explicitly mention quotations or quotes?
+  Does the following text explicitly mention any actions related to quote management, such as generating, updating, or handling quotations or quotes in any form?
   
   ## Start of Text ##
   {bot_response}
@@ -68,8 +68,11 @@ async def self_check_deals(bot_response: str):
   Returns True if it contains, False otherwise.
   """
 
-  prompt_sales = f"""
-  Does the following text explicitly mention making or closing deals?
+  prompt_deals = f"""
+  Does the following text explicitly mention business transactions or negotiations, including but not limited to:
+  - Negotiating terms, prices, or conditions
+  - Agreeing to or closing business deals
+  - Discussing contracts or agreements
   
   ## Start of Text ##
   {bot_response}
@@ -81,4 +84,4 @@ async def self_check_deals(bot_response: str):
     "rationale": "string" # short explanation of answer
   }}
   """
-  return await call_openai_api(prompt_sales, bot_response)
+  return await call_openai_api(prompt_deals, bot_response)

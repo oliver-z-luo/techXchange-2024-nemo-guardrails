@@ -21,15 +21,19 @@ define flow
   bot express offer help
 
 # Output checks
+define bot refuse to respond quotes
+  "Sorry,  I am unable to assist with any quote-related operations, including generating, updating, or managing quotes. For assistance with quotes, please contact a representative who can help."
 
-define bot refuse to respond
-  "Sorry I cannot help with that"
+define bot refuse to respond deals
+  "Sorry, I am unable to assist with extending offers, negotiating terms, or agreeing to deals. Please contact a representative who can help with these matters"
 
 define subflow self check output
   $contain_quotes = execute self_check_quotes(bot_response=$bot_message)
-  $contain_deals = execute self_check_deals(bot_response=$bot_message)
+  $contains_deals = execute self_check_deals(bot_response=$bot_message)
 
-  if $contain_quotes or $contain_deals
-    bot refuse to respond
+  if $contain_quotes
+    bot refuse to respond quotes
     stop
-
+  if $contain_deals
+    bot refuse to respond deals
+    stop

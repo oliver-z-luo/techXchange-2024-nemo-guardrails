@@ -59,4 +59,4 @@ async def self_check_deals(bot_response: str):
 
   # prompt instruction here
   
-  return await call_openai_api(prompt_sales, bot_response)
+  return await call_openai_api(prompt_deals, bot_response)
