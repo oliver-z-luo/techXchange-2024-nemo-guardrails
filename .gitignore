@@ -11,3 +11,6 @@ embeddings/
 # python temp files
 **/__pycache__/
 *.pyc
+
+# macOS
+.DS_Store

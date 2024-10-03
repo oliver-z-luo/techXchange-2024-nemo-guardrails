@@ -4,14 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-nemoguardrails = "0.9.*"
-openai = "1.*"
-python-dotenv = "1.*"
-langchain-openai = "0.1.*"
-presidio-analyzer = "2.*"
-presidio-anonymizer = "2.*"
-spacy = "3.*"
-langchain-ibm = "0.1.*"
+nemoguardrails = "*"
+openai = "*"
+python-dotenv = "*"
+langchain-openai = "*"
+presidio-analyzer = "*"
+presidio-anonymizer = "*"
+spacy = "*"
+langchain-ibm = "*"
 
 [dev-packages]
 
