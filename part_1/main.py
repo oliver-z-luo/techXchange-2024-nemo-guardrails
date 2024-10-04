@@ -1,7 +1,7 @@
 from nemoguardrails import RailsConfig, LLMRails
 from config import get_verbosity
 
-config = RailsConfig.from_path("./part_1/nemo-config")
+config = RailsConfig.from_path("/home/project/techXchange-2024-nemo-guardrails/part_1/nemo-config")
 rails = LLMRails(config)
 
 print("===========================================")
