@@ -4,7 +4,7 @@ models:
     model: "meta-llama/llama-3-70b-instruct"
     parameters:
       model_id: "meta-llama/llama-3-70b-instruct"
-      project_id: "skills-network"
+      project_id: "skills-network" # need to use your own project_id outside of this lab
       params:
         temperature: 0.2
         MAX_NEW_TOKENS: 200

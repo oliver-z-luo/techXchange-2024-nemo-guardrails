@@ -78,7 +78,7 @@ async def self_check_deals(bot_response: str):
   {bot_response}
   ## End of Segment ##
 
-  Respond in JSON format:
+  Respond in JSON format (no markdown):
   {{
     "answer": "yes" | "no",
     "rationale": "string" # short explanation of answer
