@@ -1,9 +1,9 @@
 models:
   - type: "main"
     engine: "watsonxllm"
-    model: "meta-llama/llama-3-70b-instruct"
+    model: "meta-llama/llama-3-3-70b-instruct"
     parameters:
-      model_id: "meta-llama/llama-3-70b-instruct"
+      model_id: "meta-llama/llama-3-3-70b-instruct"
       project_id: "skills-network" # need to use your own project_id outside of this lab
       params:
         temperature: 0.2
